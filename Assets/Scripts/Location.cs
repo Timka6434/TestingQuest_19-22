@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class Location : SelectableObject
 {
     [SerializeField] private uint _sceneID;
+    [SerializeField] private string _name;
     [SerializeField] private string _description;
     [SerializeField] private Sprite _sprite;
 
@@ -19,11 +20,12 @@ public class Location : SelectableObject
     public override void LoadData()
     {
         ID = _sceneID;
+        Name = _name;
         Description = _description;
     }
 
-    public void Accept(Scene scene)
+    public void Accept()
     {
-
+        Debug.Log($"Loading scene ID: {_sceneID}");
     }
 }
